@@ -4,8 +4,8 @@ import org.olmedo.poointerfaces.modelo.Cliente;
 
 import java.util.List;
 
-public interface OrdenableRepositorio {
-  List<Cliente> listar(String campo, Direccion dir); // aca le pasamos los campos y direccion que queremos ordenar
+public interface OrdenableRepositorio<T> {
+  List<T> listar(String campo, Direccion dir); // aca le pasamos los campos y direccion que queremos ordenar
                     
   // esta es una de las maneras de implementar el metodo
   /*default int ordenar(String campo, Cliente a, Cliente b) {
