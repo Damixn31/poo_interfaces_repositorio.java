@@ -3,13 +3,14 @@ package org.olmedo.poointerfaces.repositorio.lista;
 import org.olmedo.poointerfaces.modelo.Producto;
 import org.olmedo.poointerfaces.repositorio.AbstractaListRepositorio;
 import org.olmedo.poointerfaces.repositorio.Direccion;
+import org.olmedo.poointerfaces.repositorio.excepciones.LecturaAccesoDatoException;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ProductoListRepositorio extends AbstractaListRepositorio<Producto> {
   @Override
-  public void editar(Producto producto) {
+  public void editar(Producto producto) throws LecturaAccesoDatoException {
     Producto p = porId(producto.getId()); 
     p.setDescription(producto.getDescription());
     p.setPrecio(producto.getPrecio());
